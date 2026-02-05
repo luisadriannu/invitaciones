@@ -1,9 +1,20 @@
+export type EventType = "cumple" | "boda" | "xv" | "babyshower";
+export type EventVariant = "base" | "elegant" | "modern";
+export type Suscription = "classic" | "intermediary" | "premiun";
 export interface EventData {
-  type: string;
+  tipo: EventType;
+  variant?: EventVariant;
+  slug?: string;
   name: string;
   age?: number;
   date: string;
   hour: string;
   link: string;
+  images?: string[];
   location: string;
+  // ubicationText?: string;
+  direction?: string;
+  vestimentCode: string;
+  suscription: Suscription;
+  phone: string;
 }

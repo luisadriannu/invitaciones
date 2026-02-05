@@ -1,23 +1,24 @@
 import { useParams } from "react-router-dom";
 import events from "@/data/events";
-import BirthdayTemplate from "@/templates/birthday/BirthdayTemplate";
-import WeddingTemplate from "@/templates/wedding/WeddingTemplate";
-import XVTemplate from "@/templates/xv/XVTemplate";
-
-const templates = {
-  cumple: BirthdayTemplate,
-  boda: WeddingTemplate,
-  xv: XVTemplate,
-} as const;
+import { templates } from "@/templates";
 
 export default function Invitation() {
-  const { type, slug } = useParams();
+  const { tipo, slug } = useParams();
 
-  const dataE = slug ? events[slug] : null;
+  const data = slug ? events[slug] : null;
+  if (!data) return <p>Invitación no encontrada</p>;
 
-  if (!dataE) return <p>Invitación no encontrada</p>;
+  if (data.tipo !== tipo) {
+    return (
+      <p className="text-black">
+        La invitación no corresponde a esta categoría
+      </p>
+    );
+  }
 
-  const Template = type ? templates[type as keyof typeof templates] : null;
+  const Template = templates[data.tipo]?.[data.variant ?? "base"];
 
-  return Template ? <Template data={dataE} /> : <p>Tipo de evento no válido</p>;
+  if (!Template) return <p>Plantilla no disponible</p>;
+
+  return <Template data={data} />;
 }

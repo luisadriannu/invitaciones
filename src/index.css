@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+.balloons {
+  position: absolute;
+  top: -8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.balloons + img {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.content-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.content-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
