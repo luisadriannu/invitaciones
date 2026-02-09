@@ -21,7 +21,16 @@ export default function Gallery({ images }: GalleryProps) {
       >
         {images.map((src, i) => (
           <SwiperSlide key={i}>
-            <img src={src} alt={`Slide ${i}`} className="w-full h-auto" />
+            <img
+              src={src}
+              alt={`Slide ${i}`}
+              className="
+    w-full
+    aspect-4/3
+    object-cover
+    rounded-2xl
+  "
+            />
           </SwiperSlide>
         ))}
       </Swiper>

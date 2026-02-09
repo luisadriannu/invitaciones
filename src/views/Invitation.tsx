@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import events from "@/data/events";
 import { templates } from "@/templates";
 
@@ -6,19 +6,15 @@ export default function Invitation() {
   const { tipo, slug } = useParams();
 
   const data = slug ? events[slug] : null;
-  if (!data) return <p>Invitación no encontrada</p>;
+  if (!data) return <Navigate to="/404" replace />;
 
   if (data.tipo !== tipo) {
-    return (
-      <p className="text-black">
-        La invitación no corresponde a esta categoría
-      </p>
-    );
+    return <Navigate to="/404" replace />;
   }
 
   const Template = templates[data.tipo]?.[data.variant ?? "base"];
 
-  if (!Template) return <p>Plantilla no disponible</p>;
+  if (!Template) return <Navigate to="/404" replace />;
 
   return <Template data={data} />;
 }

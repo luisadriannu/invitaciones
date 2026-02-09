@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Invitation from "@/views/Invitation.tsx";
 import Home from "@/views/Home.tsx";
+import NotFound from "@/views/NotFound.tsx";
 import { useEffect, useState } from "react";
 import gifDesktop from "@/assets/pictures/no-desktop.gif";
 
@@ -37,6 +38,8 @@ function App() {
       <Routes>
         <Route path="/:tipo/:slug" element={<MobileOnly><Invitation /></MobileOnly>} />
         <Route path="/" element={<Home />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

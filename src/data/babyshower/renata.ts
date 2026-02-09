@@ -1,4 +1,5 @@
 import type { EventData } from "@/types/EventData";
+import song from "@/assets/music/borro-cassete.mp3";
 
 const event: EventData = {
   tipo: "babyshower",
@@ -11,14 +12,14 @@ const event: EventData = {
   // ubicationText: "Ciudad Altamirano",
   direction: "Lázaro Cárdenas 1909, 39090 Cdad. Altamirano, Gro.",
   images: [
-    "https://images.unsplash.com/photo-1560849735-4a22f514f2ff?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1580118949246-e37724e8f71a?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1531973968078-9bb02785f13d?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1502784444185-360e6a7cfab4?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1570800538413-2c214ca55383?auto=format&fit=crop&w=1200&q=80",
+    "https://images.pexels.com/photos/3398405/pexels-photo-3398405.jpeg?auto=compress&cs=tinysrgb&w=500",
+    "https://images.pexels.com/photos/15853117/pexels-photo-15853117.jpeg?auto=compress&cs=tinysrgb&w=500",
+    "https://images.pexels.com/photos/29324775/pexels-photo-29324775.jpeg?auto=compress&cs=tinysrgb&w=500",
+    "https://images.pexels.com/photos/35344492/pexels-photo-35344492.jpeg?auto=compress&cs=tinysrgb&w=500",
   ],
   vestimentCode: "Formal",
   phone: "522206283499",
+  music: song,
   suscription: "classic",
 };
 
