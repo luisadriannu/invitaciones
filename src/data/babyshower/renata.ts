@@ -1,5 +1,5 @@
 import type { EventData } from "@/types/EventData";
-import song from "@/assets/music/borro-cassete.mp3";
+import song from "@/assets/music/canción-de-baby-shower.mp3";
 
 const event: EventData = {
   tipo: "babyshower",

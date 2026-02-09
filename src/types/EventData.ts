@@ -1,5 +1,5 @@
 export type EventType = "cumple" | "boda" | "xv" | "babyshower";
-export type EventVariant = "base" | "elegant" | "modern";
+export type EventVariant = "base" | "elegant" | "modern" | "personalized";
 export type Suscription = "classic" | "intermediary" | "premiun";
 export interface EventData {
   tipo: EventType;

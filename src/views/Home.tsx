@@ -1,3 +1,100 @@
+import { useState } from "react";
+
+interface DropdownItem {
+  name: string;
+  url?: string;
+  subcategories?: DropdownItem[];
+}
+
+interface DropdownCategoryProps {
+  title: string;
+  items: DropdownItem[];
+}
+
+function DropdownCategory({ title, items }: DropdownCategoryProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [openSubcategory, setOpenSubcategory] = useState<string | null>(null);
+
+  return (
+    <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-xl border border-white/30 overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-6 py-4 text-white font-medium text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+      >
+        <span>{title}</span>
+        <svg
+          className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+      {isOpen && (
+        <div className="border-t border-white/20">
+          {items.map((item, index) => (
+            <div key={index}>
+              {item.subcategories ? (
+                <div>
+                  <button
+                    onClick={() =>
+                      setOpenSubcategory(
+                        openSubcategory === item.name ? null : item.name,
+                      )
+                    }
+                    className="w-full px-8 py-3 text-white/90 hover:bg-white/10 hover:text-white transition-colors flex items-center justify-between"
+                  >
+                    <span>{item.name}</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform duration-300 ${openSubcategory === item.name ? "rotate-180" : ""}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  {openSubcategory === item.name && (
+                    <div className="bg-white/5">
+                      {item.subcategories.map((sub, subIndex) => (
+                        <a
+                          key={subIndex}
+                          href={sub.url}
+                          className="block px-12 py-2 text-white/80 hover:bg-white/10 hover:text-white transition-colors text-sm"
+                        >
+                          {sub.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <a
+                  href={item.url}
+                  className="block px-8 py-3 text-white/90 hover:bg-white/10 hover:text-white transition-colors"
+                >
+                  {item.name}
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   const message = `Hola 👋
 Quiero más información acerca de las invitaciones.`;
@@ -25,10 +122,6 @@ Quiero más información acerca de las invitaciones.`;
               Digitales
             </span>
           </h1>
-
-          <p className="text-xl md:text-2xl text-gray-300 font-light">
-            by <span className="font-semibold text-white">Luis Adrian</span>
-          </p>
         </div>
 
         <div className="flex flex-wrap gap-4 justify-center pt-4">
@@ -66,6 +159,55 @@ Quiero más información acerca de las invitaciones.`;
                 <path d="M11 13l9 -9" />
                 <path d="M15 4h5v5" />
               </svg>
+            </a>
+          </div>
+        </div>
+
+        {/* Sección Ver Diseños */}
+        <div className="pt-8">
+          <h2 className="text-2xl font-semibold text-white mb-6">
+            Ver Diseños
+          </h2>
+          <div className="space-y-4 max-w-xl mx-auto">
+            {/* Cumpleaños Dropdown */}
+            <DropdownCategory
+              title="🎂 Cumpleaños"
+              items={[
+                { name: "Elegante", url: "/cumple/emanuel-19" },
+                { name: "Básico", url: "/cumple/eduardo-32" },
+                { name: "Moderno", url: "/cumple/abigail-21" },
+                {
+                  name: "Personalizada",
+                  subcategories: [
+                    { name: "Infantil Niño", url: "/cumple/luis-10" },
+                    { name: "Infantil Niña", url: "/cumple/sofia-10" },
+                  ],
+                },
+              ]}
+            />
+
+            {/* Boda */}
+            <a
+              href="/boda/luis-y-abigail"
+              className="block px-6 py-4 bg-gradient-to-r from-pink-500/20 to-red-500/20 backdrop-blur-sm rounded-xl border border-white/30 hover:border-white/60 hover:scale-105 transition-all duration-300 text-white font-medium text-left"
+            >
+              💍 Boda
+            </a>
+
+            {/* Baby Shower */}
+            <a
+              href="/babyshower/renata"
+              className="block px-6 py-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm rounded-xl border border-white/30 hover:border-white/60 hover:scale-105 transition-all duration-300 text-white font-medium text-left"
+            >
+              👶 Baby Shower
+            </a>
+
+            {/* XV Años */}
+            <a
+              href="/xv/valentina"
+              className="block px-6 py-4 bg-gradient-to-r from-rose-500/20 to-pink-500/20 backdrop-blur-sm rounded-xl border border-white/30 hover:border-white/60 hover:scale-105 transition-all duration-300 text-white font-medium text-left"
+            >
+              🎀 XV Años
             </a>
           </div>
         </div>

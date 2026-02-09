@@ -26,9 +26,10 @@ export default function Gallery({ images }: GalleryProps) {
               alt={`Slide ${i}`}
               className="
     w-full
-  aspect-4/3
-    object-cover
+    aspect-4/3
+    object-contain
     rounded-2xl
+    bg-gray-100
   "
             />
           </SwiperSlide>

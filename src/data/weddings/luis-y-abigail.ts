@@ -1,7 +1,7 @@
 import type { EventData } from "@/types/EventData";
 import elegant from "@/assets/pictures/vestimentCode/elegant.png";
 import partyElegant from "@/assets/pictures/birthdayType/elegante.png";
-import song from "@/assets/music/borro-cassete.mp3";
+import song from "@/assets/music/one-more-kiss.mp3";
 
 const event: EventData = {
   tipo: "boda",
