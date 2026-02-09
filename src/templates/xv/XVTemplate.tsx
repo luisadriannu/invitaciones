@@ -10,6 +10,7 @@ interface BirthdayTemplateProps {
 
 export default function XVTemplate({ data }: BirthdayTemplateProps) {
   const [opened, setOpened] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
   const message = `Hola 👋
 Confirmo mi asistencia a los XV años
 ¡Gracias por la invitación!`;
@@ -22,7 +23,11 @@ Confirmo mi asistencia a los XV años
   return (
     <>
       {!opened && (
-        <div className="fixed inset-0 z-50 bg-linear-to-br from-rose-100 via-pink-50 to-amber-50 flex items-center justify-center overflow-hidden">
+        <div
+          className={`fixed inset-0 z-50 bg-linear-to-br from-rose-100 via-pink-50 to-amber-50 flex items-center justify-center overflow-hidden transition-all duration-1000 ${
+            isOpening ? "opacity-0 scale-150" : "opacity-100 scale-100"
+          }`}
+        >
           {/* Confeti flotante */}
           <div className="absolute inset-0">
             <div className="absolute top-20 left-10 w-4 h-4 bg-rose-400 rounded-full animate-bounce opacity-70" />
@@ -52,7 +57,10 @@ Confirmo mi asistencia a los XV años
             </h3>
 
             <button
-              onClick={() => setOpened(true)}
+              onClick={() => {
+                setIsOpening(true);
+                setTimeout(() => setOpened(true), 1000);
+              }}
               className="
                 relative px-16 py-5
                 bg-linear-to-r from-rose-400 to-amber-400
@@ -66,9 +74,10 @@ Confirmo mi asistencia a los XV años
                 active:scale-95
                 transition-all duration-300
                 cursor-pointer
+                animate-bounce
               "
             >
-              <span className="relative z-10">✨ Abrir Invitación ✨</span>
+              <span className="relative z-10">Abrir Invitación</span>
             </button>
 
             <p className="mt-8 text-rose-600 text-sm tracking-[0.3em] animate-pulse">
