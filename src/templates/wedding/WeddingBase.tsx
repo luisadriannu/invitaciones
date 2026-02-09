@@ -1,7 +1,7 @@
 import type { EventData } from "@/types/EventData";
 import CountDown from "@/components/CountDown";
 import Gallery from "@/components/Gallery";
-import { Heart, Church, GlassWater, Shirt, Gift } from "lucide-react";
+import { Heart, Church, Shirt, Gift } from "lucide-react";
 import { useEffect, useState } from "react";
 import MusicButton from "@/components/MusicButton";
 
@@ -59,9 +59,9 @@ Confirmo mi asistencia a la boda 💍
               {data.name}
             </h1>
 
-            <p className="italic text-gray-500 mb-8 font-serif">
+            {/* <p className="italic text-gray-500 mb-8 font-serif">
               {data.phrase}
-            </p>
+            </p> */}
 
             <p className="text-sm tracking-widest uppercase text-gray-500 mb-10">
               {data.date} • {data.hour}

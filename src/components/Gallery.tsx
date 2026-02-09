@@ -26,7 +26,7 @@ export default function Gallery({ images }: GalleryProps) {
               alt={`Slide ${i}`}
               className="
     w-full
-    aspect-4/3
+  aspect-4/3
     object-cover
     rounded-2xl
   "

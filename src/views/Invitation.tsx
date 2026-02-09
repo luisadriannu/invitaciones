@@ -12,7 +12,9 @@ export default function Invitation() {
     return <Navigate to="/404" replace />;
   }
 
-  const Template = templates[data.tipo]?.[data.variant ?? "base"];
+  const templatesByType = templates[data.tipo as keyof typeof templates];
+  const variant = (data.variant ?? "base") as "base" | "elegant" | "modern";
+  const Template = templatesByType?.[variant as keyof typeof templatesByType];
 
   if (!Template) return <Navigate to="/404" replace />;
 
