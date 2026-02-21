@@ -22,4 +22,20 @@ export interface EventData {
   partyType?: string;
   ceremonyWedding?: string;
   ceremonyHour?: string;
+  colors?: {
+    primary?: string;
+    secondary?: string;
+    accent?: string;
+    background?: string;
+  };
+  petitionSpecially?: boolean;
+  namesParents?: {
+    momBoy: string;
+    dadBoy: string;
+    momGirl: string;
+    dadGirl: string;
+  };
+  limitDate?: string;
+  messageConfirmation?: string;
+  phrase?: string;
 }

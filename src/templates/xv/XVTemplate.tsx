@@ -45,6 +45,26 @@ Confirmo mi asistencia a los XV años
             />
           </div>
 
+          {/* Decoraciones elegantes en las esquinas */}
+          <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-amber-300 opacity-60" />
+          <div className="absolute top-0 right-0 w-32 h-32 border-t-4 border-r-4 border-amber-300 opacity-60" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 border-b-4 border-l-4 border-amber-300 opacity-60" />
+          <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-amber-300 opacity-60" />
+
+          {/* Ornamentos en las esquinas */}
+          <div className="absolute top-4 left-4 text-3xl text-amber-300 opacity-70">
+            ✦
+          </div>
+          <div className="absolute top-4 right-4 text-3xl text-amber-300 opacity-70">
+            ✦
+          </div>
+          <div className="absolute bottom-4 left-4 text-3xl text-amber-300 opacity-70">
+            ✦
+          </div>
+          <div className="absolute bottom-4 right-4 text-3xl text-amber-300 opacity-70">
+            ✦
+          </div>
+
           <div className="text-center px-6 relative z-10">
             {/* Número XV elegante */}
             <div className="mb-6">
@@ -122,8 +142,15 @@ Confirmo mi asistencia a los XV años
           </div>
 
           {/* Countdown */}
-          <div className="mb-16 text-rose-900">
-            <CountDown data={data} />
+          <div className="mb-16">
+            <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-10 shadow-xl border-2 border-rose-300">
+              <h3 className="text-3xl font-semibold text-rose-800 mb-8">
+                Cuenta Regresiva
+              </h3>
+              <div className="text-rose-900">
+                <CountDown data={data} />
+              </div>
+            </div>
           </div>
 
           {/* Detalles del evento */}
