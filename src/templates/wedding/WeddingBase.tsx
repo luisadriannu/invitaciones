@@ -17,7 +17,7 @@ interface Props {
 }
 
 export default function WeddingBaseTemplate({ data }: Props) {
-  const message = data.messageConfirmation || '';
+  const message = data.messageConfirmation || "";
   const [opened, setOpened] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const encodedMessage = encodeURIComponent(message);

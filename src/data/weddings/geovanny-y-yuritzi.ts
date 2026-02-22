@@ -35,8 +35,8 @@ const event: EventData = {
   },
   petitionSpecially: true,
   namesParents: {
-    momBoy: "Enf. Yolanda Avelino Soto",
-    dadBoy: "Mtro. Miguel Santos Ángel",
+    momBoy: "L.E.O. Yolanda Avelino Soto",
+    dadBoy: "Prof. Miguel Santos Ángel",
     momGirl: "Dra. Angelica Gonzalez Rivera",
     dadGirl: "Dr. Armando Camargo Martínez ",
   },
