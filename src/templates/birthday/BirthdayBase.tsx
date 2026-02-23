@@ -365,7 +365,7 @@ Quiero confirmar mi asistencia a la fiesta 🎉
           </div>
         </div>
       </article>
-      <MusicButton src={data.music} />
+      {data.music && <MusicButton src={data.music} />}
     </>
   );
 }

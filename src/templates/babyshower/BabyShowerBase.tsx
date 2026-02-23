@@ -408,7 +408,7 @@ Confirmo mi asistencia al baby shower
           </div>
         </div>
       </article>
-      <MusicButton src={data.music} />
+      {data.music && <MusicButton src={data.music} />}
     </>
   );
 }

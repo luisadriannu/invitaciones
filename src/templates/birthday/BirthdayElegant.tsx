@@ -230,7 +230,7 @@ export default function BirthdayElegantTemplate({ data }: Props) {
           <p className="mt-2">El mejor regalo será tu presencia</p>
         </div>
       </article>
-      <MusicButton src={data.music} />
+      {data.music && <MusicButton src={data.music} />}
     </>
   );
 }
