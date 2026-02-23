@@ -17,7 +17,7 @@ export interface EventData {
   vestimentCode: string;
   suscription: Suscription;
   phone: string;
-  music: string;
+  music?: string;
   vestimentCodeImg?: string;
   partyType?: string;
   ceremonyWedding?: string;

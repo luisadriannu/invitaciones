@@ -1,6 +1,5 @@
 import type { EventData } from "@/types/EventData";
 import vestiment from "@/assets/pictures/vestimentCode/casual.png";
-import song from "@/assets/music/jurassic-park.mp3";
 import partyNeon from "@/assets/pictures/birthdayType/neon.png";
 import picture1 from "@/assets/pictures/birthdayPictures/cumple-luis.jpeg";
 import picture2 from "@/assets/pictures/birthdayPictures/cumple-luis-2.jpeg";
@@ -20,7 +19,7 @@ const event: EventData = {
   vestimentCodeImg: vestiment,
   phone: "522206283499",
   suscription: "classic",
-  music: song,
+  // music: song,
   partyType: partyNeon,
 };
 

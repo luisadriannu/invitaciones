@@ -631,7 +631,7 @@ export default function JoseYAsmindaTemplate({ data }: Props) {
           {data.name} • {new Date().getFullYear()} • Con Amor
         </footer>
       </article>
-      <MusicButton src={data.music} />
+      <MusicButton src={data.music || ""} />
     </>
   );
 }
