@@ -67,12 +67,12 @@ export default function CountDown({ data }: Props) {
   return (
     <div className="text-center my-8">
       {isFinished ? (
-        <div className="relative inline-block rounded-xl p-[2px] overflow-hidden">
+        <div className="relative inline-block rounded-xl p-0.5 overflow-hidden">
           {/* Borde animado */}
           <div
             className="
       absolute inset-0
-      bg-linear-to-r from-sky-300 via-purple-300 to-teal-300
+      bg-linear-to-r from-sky-300 via-purple-300 to-teal-300  
       animate-spin-slow
     "
           />
