@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 interface DropdownItem {
@@ -117,31 +118,34 @@ Quiero más información acerca de las invitaciones.`;
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-            Invitaciones
+            Bienvenido a
             <span className="block bg-linear-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Digitales
+              Invitaciones Digitales
             </span>
           </h1>
+
+          <p className="text-white/90 text-lg">
+            Las muestras ahora están en{" "}
+            <a
+              href="https://invitaciones-muestra.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-400 hover:text-pink-300 underline font-semibold flex justify-center gap-1 items-center"
+            >
+              invitaciones-muestra.vercel.app <ExternalLink />
+            </a>
+          </p>
         </div>
 
         <div className="flex flex-wrap gap-4 justify-center pt-4">
           <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-            <span className="text-white text-sm">✨ Diseños únicos</span>
-          </div>
-          <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-            <span className="text-white text-sm">🎉 Personalizadas</span>
-          </div>
-          <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-            <span className="text-white text-sm">💌 Inolvidables</span>
-          </div>
-          <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
             <a
               target="_blank"
-              rel="noreferer"
+              rel="noopener noreferrer"
               href={`https://api.whatsapp.com/send?phone=522206283499&text=${encodedMessage}`}
               className="text-white text-sm flex items-center justify-center gap-1 cursor-pointer"
             >
-              📞 Whatsapp
+              📞 Contáctanos por WhatsApp
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -149,65 +153,15 @@ Quiero más información acerca de las invitaciones.`;
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-external-link"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
                 <path d="M11 13l9 -9" />
                 <path d="M15 4h5v5" />
               </svg>
-            </a>
-          </div>
-        </div>
-
-        {/* Sección Ver Diseños */}
-        <div className="pt-8">
-          <h2 className="text-2xl font-semibold text-white mb-6">
-            Ver Diseños
-          </h2>
-          <div className="space-y-4 max-w-xl mx-auto">
-            {/* Cumpleaños Dropdown */}
-            <DropdownCategory
-              title="🎂 Cumpleaños"
-              items={[
-                { name: "Elegante", url: "/cumple/emanuel-19" },
-                { name: "Básico", url: "/cumple/eduardo-32" },
-                { name: "Moderno", url: "/cumple/abigail-21" },
-                {
-                  name: "Personalizada",
-                  subcategories: [
-                    { name: "Infantil Niño", url: "/cumple/luis-10" },
-                    { name: "Infantil Niña", url: "/cumple/sofia-10" },
-                  ],
-                },
-              ]}
-            />
-
-            {/* Boda */}
-            <a
-              href="/boda/luis-y-abigail"
-              className="block px-6 py-4 bg-gradient-to-r from-pink-500/20 to-red-500/20 backdrop-blur-sm rounded-xl border border-white/30 hover:border-white/60 hover:scale-105 transition-all duration-300 text-white font-medium text-left"
-            >
-              💍 Boda
-            </a>
-
-            {/* Baby Shower */}
-            <a
-              href="/babyshower/renata"
-              className="block px-6 py-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm rounded-xl border border-white/30 hover:border-white/60 hover:scale-105 transition-all duration-300 text-white font-medium text-left"
-            >
-              👶 Baby Shower
-            </a>
-
-            {/* XV Años */}
-            <a
-              href="/xv/valentina"
-              className="block px-6 py-4 bg-gradient-to-r from-rose-500/20 to-pink-500/20 backdrop-blur-sm rounded-xl border border-white/30 hover:border-white/60 hover:scale-105 transition-all duration-300 text-white font-medium text-left"
-            >
-              🎀 XV Años
             </a>
           </div>
         </div>
