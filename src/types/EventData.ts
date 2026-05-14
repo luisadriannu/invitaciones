@@ -1,4 +1,4 @@
-export type EventType = "cumple" | "boda" | "xv" | "babyshower";
+export type EventType = "cumple" | "boda" | "xv" | "babyshower" | "bautizo";
 export type EventVariant = "base" | "elegant" | "modern" | "personalized";
 export type Suscription = "classic" | "intermediary" | "premiun";
 export interface EventData {
@@ -9,11 +9,13 @@ export interface EventData {
   age?: number;
   date: string;
   hour: string;
+  hour2: string;
   link: string;
   images?: string[];
   location: string;
   // ubicationText?: string;
   direction?: string;
+  direction2?: string;
   vestimentCode: string;
   suscription: Suscription;
   phone: string;

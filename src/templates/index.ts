@@ -4,6 +4,7 @@ import BirthdayModern from "@/templates/birthday/BirthdayModern";
 import WeddingBase from "@/templates/wedding/WeddingBase";
 import BabyShowerBase from "@/templates/babyshower/BabyShowerBase";
 import XVBaseTemplate from "@/templates/xv/XVTemplate";
+import ChristeningBase from "@/templates/christening/ChristeningBase";
 
 export const templates = {
   cumple: {
@@ -19,5 +20,8 @@ export const templates = {
   },
   xv: {
     base: XVBaseTemplate,
+  },
+  bautizo: {
+    base: ChristeningBase,
   },
 } as const;
