@@ -114,6 +114,7 @@ Confirmo mi asistencia al bautizo
       duration: `${3 + Math.random() * 5}s`,
     })),
   );
+  const coverImage = data.images?.[0];
 
   return (
     <>
@@ -213,7 +214,7 @@ Confirmo mi asistencia al bautizo
 
               <div className="relative w-56 h-56 rounded-full overflow-hidden border-[6px] border-[#d4af37]/40 shadow-[0_10px_40px_rgba(212,175,55,0.25)]">
                 <img
-                  src={data.images[0]}
+                  src={coverImage}
                   alt="Imagen de la festejada"
                   className="w-full h-full object-cover"
                 />
@@ -266,21 +267,279 @@ Confirmo mi asistencia al bautizo
           shadow-[0_10px_40px_rgba(212,175,55,0.12)]
         "
             >
-              <p className="uppercase tracking-[0.3em] text-xs text-[#b89b5e]">
-                Celebra con nosotros
+              <p
+                className="
+      uppercase
+      tracking-[0.35em]
+      text-[11px]
+      text-[#b6a76d]
+      font-medium
+      mb-6
+    "
+              >
+                CELEBRA CON NOSOTROS
               </p>
 
-              <h2 className="font-['Cormorant_Garamond'] text-5xl mt-4">
+              <h2
+                className="
+      font-['Cormorant_Garamond']
+      text-[52px]
+      leading-none
+      text-[#6f5d50]
+      font-normal
+    "
+              >
                 El Bautizo de
               </h2>
-
-              <h1 className="font-['Cormorant_Garamond'] text-6xl text-[#d4af37] mt-3">
-                {data.name}
+              <br />
+              <h1
+                className="
+      font-['Great_Vibes']
+      text-[70px]
+      leading-[0.95]
+      text-[#efc8d2]
+      mt-2
+      drop-shadow-[0_2px_8px_rgba(239,200,210,0.18)]
+    "
+              >
+                Camila <br />
+                Vicenta <br />
+                Rivas De <br />
+                Jesús
               </h1>
 
-              <p className="mt-8 italic text-[#9c8c7c]">
+              <p
+                className="
+      mt-10
+      italic
+      text-[#8c7668]
+      text-[20px]
+      font-['Cormorant_Garamond']
+    "
+              >
                 Un día lleno de amor, fe y bendiciones
               </p>
+            </div>
+          </div>
+
+          {/* ================= PADRES Y PADRINOS ================= */}
+
+          <div
+            ref={(el) => {
+              if (el && !sectionsRef.current.includes(el)) {
+                sectionsRef.current.push(el);
+              }
+            }}
+            className="content-section mt-15"
+          >
+            <div
+              className="
+      bg-white/70
+      backdrop-blur-xl
+      rounded-[32px]
+      border border-[#d4af3730]
+      shadow-[0_10px_40px_rgba(212,175,55,0.10)]
+      p-10
+      text-center
+      overflow-hidden
+      relative
+    "
+            >
+              {/* Glow decorativo */}
+              <div className="absolute top-[-60px] left-1/2 -translate-x-1/2 w-56 h-56 bg-[#d4af37]/10 blur-3xl rounded-full" />
+
+              {/* ================= DECORACIÓN ================= */}
+
+              <div className="relative mb-10 flex justify-center">
+                <svg
+                  width="220"
+                  height="90"
+                  viewBox="0 0 220 90"
+                  className="opacity-80"
+                >
+                  <g stroke="#d4af37" strokeWidth="1.2" fill="none">
+                    {/* Línea principal */}
+                    <path d="M20 45 Q70 10 110 45 Q150 10 200 45" />
+
+                    {/* Línea secundaria */}
+                    <path
+                      d="M35 55 Q110 70 185 55"
+                      opacity="0.35"
+                      strokeWidth="0.8"
+                    />
+
+                    {/* Cruz central */}
+                    <path d="M110 28v24" strokeWidth="1.6" />
+                    <path d="M102 36h16" strokeWidth="1.6" />
+
+                    {/* Ornamentales */}
+                    <circle
+                      cx="70"
+                      cy="15"
+                      r="3"
+                      fill="#d4af37"
+                      opacity="0.5"
+                    />
+                    <circle
+                      cx="150"
+                      cy="15"
+                      r="3"
+                      fill="#d4af37"
+                      opacity="0.5"
+                    />
+
+                    <circle
+                      cx="45"
+                      cy="42"
+                      r="2"
+                      fill="#d4af37"
+                      opacity="0.35"
+                    />
+                    <circle
+                      cx="175"
+                      cy="42"
+                      r="2"
+                      fill="#d4af37"
+                      opacity="0.35"
+                    />
+                  </g>
+                </svg>
+              </div>
+
+              {/* ================= PADRES ================= */}
+
+              <p
+                className="
+        uppercase
+        tracking-[0.35em]
+        text-[11px]
+        text-[#b6a76d]
+        mb-8
+      "
+              >
+                Padres
+              </p>
+
+              <div className="space-y-10 relative z-10">
+                {/* PAPÁS */}
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-px bg-[#d4af3730]" />
+
+                    <p className="font-['Cormorant_Garamond'] italic text-[#b6a76d] text-xl">
+                      Papás
+                    </p>
+
+                    <div className="w-10 h-px bg-[#d4af3730]" />
+                  </div>
+
+                  <div className="space-y-3">
+                    <p
+                      className="
+              font-['Cormorant_Garamond']
+              text-3xl
+              text-[#6f5d50]
+              leading-tight
+            "
+                    >
+                      {data.namesParents?.dadGirl}
+                    </p>
+
+                    <p className="text-[#d4af37] text-2xl">&</p>
+
+                    <p
+                      className="
+              font-['Cormorant_Garamond']
+              text-3xl
+              text-[#6f5d50]
+              leading-tight
+            "
+                    >
+                      {data.namesParents?.momGirl}
+                    </p>
+                  </div>
+                </div>
+
+                {/* DIVISOR */}
+                <div className="flex justify-center py-2">
+                  <svg width="120" height="20" viewBox="0 0 120 20">
+                    <path
+                      d="M0 10 Q30 0 60 10 T120 10"
+                      fill="none"
+                      stroke="#d4af37"
+                      strokeWidth="1"
+                      opacity="0.5"
+                    />
+                  </svg>
+                </div>
+
+                {/* ================= PADRINOS ================= */}
+
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-px bg-[#d4af3730]" />
+
+                    <p className="font-['Cormorant_Garamond'] italic text-[#b6a76d] text-xl">
+                      Padrinos
+                    </p>
+
+                    <div className="w-10 h-px bg-[#d4af3730]" />
+                  </div>
+
+                  <div className="space-y-3">
+                    <p
+                      className="
+              font-['Cormorant_Garamond']
+              text-3xl
+              text-[#6f5d50]
+              leading-tight
+            "
+                    >
+                      {data.godparents?.men}
+                    </p>
+
+                    <p className="text-[#d4af37] text-2xl">&</p>
+
+                    <p
+                      className="
+              font-['Cormorant_Garamond']
+              text-3xl
+              text-[#6f5d50]
+              leading-tight
+            "
+                    >
+                      {data.godparents?.girl}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* MENSAJE */}
+
+              <div className="mt-14 relative z-10">
+                <p
+                  className="
+          italic
+          text-[#8c7668]
+          text-lg
+          font-['Cormorant_Garamond']
+        "
+                >
+                  Con amor y alegría
+                </p>
+
+                <p
+                  className="
+          mt-2
+          text-[#a08d74]
+          text-sm
+          tracking-[0.15em]
+          uppercase
+        "
+                >
+                  Acompañan este día tan especial
+                </p>
+              </div>
             </div>
           </div>
 
@@ -292,10 +551,9 @@ Confirmo mi asistencia al bautizo
                 sectionsRef.current.push(el);
               }
             }}
-            className="content-section mt-14 grid gap-6"
+            className="content-section mt-10 grid gap-6"
           >
             {/* FECHA */}
-
             <div className="bg-white/70 backdrop-blur-xl rounded-[28px] border border-[#d4af3730] p-8 shadow-xl text-center">
               <p className="tracking-[0.3em] uppercase text-xs text-[#b89b5e]">
                 Fecha
@@ -453,6 +711,9 @@ Confirmo mi asistencia al bautizo
 
           {data.images && (
             <div className="mt-20">
+              <h3 className="text-center text-3xl font-serif mb-10 tracking-wide text-[#D4AF37]">
+                Galería
+              </h3>
               <Gallery images={data.images} />
 
               <p className="text-center text-xs tracking-[0.2em] uppercase text-[#a08d74] mt-6">
@@ -529,7 +790,7 @@ Confirmo mi asistencia al bautizo
               className="
           inline-flex
           items-center
-          gap-3
+          gap-1
           mt-10
           px-10
           py-5
@@ -546,18 +807,39 @@ Confirmo mi asistencia al bautizo
               Confirmar asistencia
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
-                fill="currentColor"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
               >
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.874 1.213 3.072.149.198 2.095 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
               </svg>
             </a>
 
+            <p
+              className="
+    italic
+    text-[#8c7668]
+    text-[22px]
+    leading-relaxed
+    font-['Cormorant_Garamond']
+    max-w-[340px]
+    mx-auto
+    mt-10
+  "
+            >
+              “Mi Bautizo es el inicio de un camino lleno de fe, amor y
+              bendiciones de Dios.”
+            </p>
             {/* DECORACIÓN FINAL */}
-
-            <div className="opacity-40 mt-20 flex justify-center">
+            <div className="opacity-40 mt-10 flex justify-center">
               <svg viewBox="0 0 200 20" width="180">
                 <path
                   d="M0 10 Q50 0 100 10 T200 10"

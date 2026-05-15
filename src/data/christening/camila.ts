@@ -1,4 +1,7 @@
 import type { EventData } from "@/types/EventData";
+import picture1 from "@/assets/pictures/christening/camila/picture1.jpeg";
+import picture2 from "@/assets/pictures/christening/camila/picture2.jpeg";
+import picture3 from "@/assets/pictures/christening/camila/picture3.jpeg";
 import picture4 from "@/assets/pictures/christening/camila/picture4.jpg";
 import picture5 from "@/assets/pictures/christening/camila/picture5.jpg";
 import picture6 from "@/assets/pictures/christening/camila/picture6.jpg";
@@ -15,10 +18,18 @@ const event: EventData = {
   // ubicationText: "Ciudad Altamirano",
   direction: "Catedral San Juan Bautista Cd. Altamirano",
   direction2: "Salón Quinta Karen",
-  images: [picture4, picture5, picture6],
+  images: [picture1, picture2, picture3, picture4, picture5, picture6],
   vestimentCode: "Usar colores claros",
   phone: "527331325056",
   music: song,
+  namesParents: {
+    momGirl: "C.P Erika De Jesús Carlos",
+    dadGirl: "Doc. Vicente Junior Rivas Negrete",
+  },
+  godparents: {
+    men: "Lic. Juan Rivera Mendoza ",
+    girl: "Mtra. Yaritza Betancourt Higuera",
+  },
   suscription: "classic",
 };
 

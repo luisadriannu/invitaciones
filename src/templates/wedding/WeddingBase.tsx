@@ -761,7 +761,6 @@ export default function WeddingBaseTemplate({ data }: Props) {
             className="
             inline-block
             bg-white
-            
             px-10
             py-4
             rounded-full

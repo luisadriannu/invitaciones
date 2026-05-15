@@ -32,10 +32,14 @@ export interface EventData {
   };
   petitionSpecially?: boolean;
   namesParents?: {
-    momBoy: string;
-    dadBoy: string;
+    // momBoy: string;
+    // dadBoy: string;
     momGirl: string;
     dadGirl: string;
+  };
+  godparents?: {
+    men: string;
+    girl: string;
   };
   limitDate?: string;
   messageConfirmation?: string;
