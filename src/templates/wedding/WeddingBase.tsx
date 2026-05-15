@@ -380,7 +380,7 @@ export default function WeddingBaseTemplate({ data }: Props) {
               <div className="space-y-6 mb-8">
                 {/* Padres del novio */}
                 <div className="flex justify-center gap-8">
-                  <p
+                  {/* <p
                     className="font-serif text-lg"
                     style={{ color: colors.secondary }}
                   >
@@ -391,7 +391,7 @@ export default function WeddingBaseTemplate({ data }: Props) {
                     style={{ color: colors.secondary }}
                   >
                     {data.namesParents.momBoy}
-                  </p>
+                  </p> */}
                 </div>
 
                 {/* Padres de la novia */}
