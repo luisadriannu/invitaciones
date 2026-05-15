@@ -296,13 +296,13 @@ export default function JoseYAsmindaTemplate({ data }: Props) {
             </div>
             <div className="space-y-6 mb-10">
               <div className="flex justify-center items-center gap-4">
-                <p className="font-serif text-lg text-gray-700 w-48 text-right">
+                {/* <p className="font-serif text-lg text-gray-700 w-48 text-right">
                   {data.namesParents?.dadBoy}
                 </p>
                 <span className="text-[#D4AF37]">&</span>
                 <p className="font-serif text-lg text-gray-700 w-48 text-left">
                   {data.namesParents?.momBoy}
-                </p>
+                </p> */}
               </div>
               <div className="flex justify-center items-center gap-4">
                 <p className="font-serif text-lg text-gray-700 w-48 text-right">

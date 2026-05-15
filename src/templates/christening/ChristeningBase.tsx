@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { EventData } from "@/types/EventData";
 import Gallery from "@/components/Gallery";
 import CountDown from "@/components/CountDown";
@@ -58,54 +58,58 @@ Confirmo mi asistencia al bautizo
     return () => observer.disconnect();
   }, []);
 
-  const mesesMap: Record<string, number> = {
-    Enero: 0,
-    Febrero: 1,
-    Marzo: 2,
-    Abril: 3,
-    Mayo: 4,
-    Junio: 5,
-    Julio: 6,
-    Agosto: 7,
-    Septiembre: 8,
-    Octubre: 9,
-    Noviembre: 10,
-    Diciembre: 11,
-  };
+  // const mesesMap: Record<string, number> = {
+  //   Enero: 0,
+  //   Febrero: 1,
+  //   Marzo: 2,
+  //   Abril: 3,
+  //   Mayo: 4,
+  //   Junio: 5,
+  //   Julio: 6,
+  //   Agosto: 7,
+  //   Septiembre: 8,
+  //   Octubre: 9,
+  //   Noviembre: 10,
+  //   Diciembre: 11,
+  // };
 
-  const diasSemana = [
-    "Domingo",
-    "Lunes",
-    "Martes",
-    "Miércoles",
-    "Jueves",
-    "Viernes",
-    "Sábado",
-  ];
+  // const diasSemana = [
+  //   "Domingo",
+  //   "Lunes",
+  //   "Martes",
+  //   "Miércoles",
+  //   "Jueves",
+  //   "Viernes",
+  //   "Sábado",
+  // ];
 
-  const meses: Record<string, string> = {
-    Enero: "01",
-    Febrero: "02",
-    Marzo: "03",
-    Abril: "04",
-    Mayo: "05",
-    Junio: "06",
-    Julio: "07",
-    Agosto: "08",
-    Septiembre: "09",
-    Octubre: "10",
-    Noviembre: "11",
-    Diciembre: "12",
-  };
-  const [dia, mes] = data.date.split(" ");
+  // const meses: Record<string, string> = {
+  //   Enero: "01",
+  //   Febrero: "02",
+  //   Marzo: "03",
+  //   Abril: "04",
+  //   Mayo: "05",
+  //   Junio: "06",
+  //   Julio: "07",
+  //   Agosto: "08",
+  //   Septiembre: "09",
+  //   Octubre: "10",
+  //   Noviembre: "11",
+  //   Diciembre: "12",
+  // };
+  // const [dia, mes] = data.date.split(" ");
 
-  const [dayNumberStr, monthStr, yearStr] = data.date.split(" ");
+  const [
+    dayNumberStr,
+    monthStr,
+    // yearStr
+  ] = data.date.split(" ");
   const dayNumber = Number(dayNumberStr);
-  const monthIndex = mesesMap[monthStr];
-  const year = Number(yearStr);
+  // const monthIndex = mesesMap[monthStr];
+  // const year = Number(yearStr);
 
-  const dateObj = new Date(year, monthIndex, dayNumber);
-  const dayName = diasSemana[dateObj.getDay()];
+  // const dateObj = new Date(year, monthIndex, dayNumber);
+  // const dayName = diasSemana[dateObj.getDay()];
 
   const [particles] = useState(() =>
     [...Array(20)].map(() => ({
