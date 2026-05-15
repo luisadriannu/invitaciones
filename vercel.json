@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/:tipo/:nombre",
+      "destination": "/api/seo?tipo=:tipo&nombre=:nombre"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

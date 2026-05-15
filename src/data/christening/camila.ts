@@ -20,7 +20,7 @@ const event: EventData = {
   direction2: "Salón Quinta Karen",
   images: [picture1, picture2, picture3, picture4, picture5, picture6],
   vestimentCode: "Usar colores claros",
-  phone: "527331325056",
+  phone: "527671160973",
   music: song,
   namesParents: {
     momGirl: "C.P Erika De Jesús Carlos",
