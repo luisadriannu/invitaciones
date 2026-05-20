@@ -115,21 +115,21 @@ Confirmo mi asistencia al bautizo.
   //   "Sábado",
   // ];
 
-  const meses: Record<string, string> = {
-    Enero: "01",
-    Febrero: "02",
-    Marzo: "03",
-    Abril: "04",
-    Mayo: "05",
-    Junio: "06",
-    Julio: "07",
-    Agosto: "08",
-    Septiembre: "09",
-    Octubre: "10",
-    Noviembre: "11",
-    Diciembre: "12",
-  };
-  const [dia, mes] = data.date.split(" ");
+  // const meses: Record<string, string> = {
+  //   Enero: "01",
+  //   Febrero: "02",
+  //   Marzo: "03",
+  //   Abril: "04",
+  //   Mayo: "05",
+  //   Junio: "06",
+  //   Julio: "07",
+  //   Agosto: "08",
+  //   Septiembre: "09",
+  //   Octubre: "10",
+  //   Noviembre: "11",
+  //   Diciembre: "12",
+  // };
+  // const [dia, mes] = data.date.split(" ");
 
   const [
     dayNumberStr,
@@ -201,7 +201,6 @@ Confirmo mi asistencia al bautizo.
         </div>
 
         {/* ================= PUERTAS ================= */}
-
         {!hasOpened && (
           <div
             ref={containerRef}
@@ -399,14 +398,63 @@ Confirmo mi asistencia al bautizo.
             className="content-section flex flex-col items-center text-center"
           >
             {/* FOTO */}
-            <div className="relative">
-              <div className="absolute inset-0 blur-2xl bg-[#efc8d2]/20 rounded-full scale-110" />
-              <div className="relative w-56 h-56 rounded-full overflow-hidden border-[6px] border-[#efc8d2]/40 shadow-[0_10px_40px_rgba(239,200,210)]">
-                <img
-                  src={coverImage2}
-                  alt="Imagen de la festejada"
-                  className="w-full h-full object-cover"
-                />
+            <div className="relative flex justify-center">
+              {/* GLOW */}
+
+              <div
+                className="
+      absolute
+      w-72
+      h-72
+      bg-[#efc8d2]/20
+      blur-3xl
+      rounded-[30px]
+      scale-110
+    "
+              />
+
+              {/* MARCO */}
+
+              <div
+                className="
+      relative
+      p-[7px]
+      rounded-[34px]
+      bg-gradient-to-br
+      shadow-[0_14px_45px_rgba(239,200,210,0.30)]
+    "
+              >
+                {/* CONTENEDOR */}
+
+                <div
+                  className="
+        w-64
+        h-64
+        rounded-[28px]
+        overflow-hidden
+        bg-white
+        border border-white/40
+        relative
+      "
+                >
+                  {/* IMAGEN */}
+
+                  <img
+                    src={coverImage2}
+                    alt="Imagen de la festejada"
+                    className="
+          w-full
+          h-full
+          object-cover
+          object-center
+          scale-105
+        "
+                  />
+
+                  {/* OVERLAY SUAVE */}
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                </div>
               </div>
             </div>
 
